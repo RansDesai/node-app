@@ -1,0 +1,13 @@
+{
+  "name": "helloworld",
+  "version": "1.0.0",
+  "description": "Sample app for Learning",
+  "main": "server.js",
+  "scripts": {
+    "start": "node ./src/server.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
