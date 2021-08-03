@@ -12,7 +12,7 @@ app.get('/version', function (req, res) {
         {
           version: process.env.npm_package_version,
           lastcommitsha: git.short(),
-          description: "Hello world"
+          description: "pre-interview technical test"
         }
     ]
   });
