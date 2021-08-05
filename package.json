@@ -9,9 +9,6 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1",
-    "fs": "0.0.1-security",
-    "git-rev-sync": "^3.0.1",
-    "nodegit": "^0.27.0",
-    "promise": "^8.1.0"
+    "fs": "0.0.1-security"
   }
 }
