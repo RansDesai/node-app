@@ -1,17 +1,35 @@
 const express = require('express');
+fs = require('fs');
+
 var app = express();
 var port = process.env.PORT || 3000
-const git = require("git-rev-sync");
+var commitsha
 
-// This responds a GET request for the /version page.
+//var Git = require( 'nodegit' );
+//Git.Clone(repo, "./tmp")
+
+const shell = require('shelljs')
+shell.exec('git clone https://github.com/RansDesai/node-app')
+
 app.get('/version', function (req, res) {
   console.log("Got a GET request for /version");
+
+  shell.cd("../node-app/")
+  shell.exec('git pull')
+  fs.readFile('.git/refs/heads/main', 'utf8', function (err,data) {
+    if (err) {
+      return console.log(err);
+    }
+    commitsha = data;
+  });
+  
+// This responds a GET request for the /version page.
   res.json(
     {
       myapplication: [
         {
           version: process.env.npm_package_version,
-          lastcommitsha: git.short(),
+          lastcommitsha: commitsha,
           description: "pre-interview technical test"
         }
     ]
