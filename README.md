@@ -10,14 +10,14 @@ In order to deploy on a Kubernetes cluster
 git clone https://github.com/RansDesai/node-app.git
 ```
 
-- Run the deploy.sh script under k8s directory
+- Run the deploy.sh script under k8s directory. Please make sure you are connected to the right kubernetes cluster before deploying the resources.
 ```
 chmod +x k8s/deploy.sh
 ./k8s/deploy.sh
 ```
 - You can port forward the service to test the application
 ```
-kubectl port-forward service/task-service 8080:80
+kubectl port-forward service/task-service 8080:80 -n technical-test
 ```
 
 - Hit the page https://localhost:8080/version the expected output will be;
@@ -35,7 +35,7 @@ kubectl port-forward service/task-service 8080:80
 
 - If you need to update the application version then just to restart the deployment
 ```
-kubectl rollout restart deployment.apps/task-deployment
+kubectl rollout restart deployment.apps/task-deployment -n technical-test
 ```
 
 
