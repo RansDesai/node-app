@@ -19,6 +19,7 @@ spec:
         image: ransdesai90/task:latest
         ports:
         - containerPort: 3000
-        requests:
-          cpu: 50m
-          memory: 100Mi
+        resources:
+          requests:
+            cpu: 50m
+            memory: 100Mi
