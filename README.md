@@ -5,6 +5,7 @@ The application is built in NodeJs. It has just one endpoint /version that retur
 ## How to Install
 
 In order to deploy on a kubernetes cluster
+
 - Clone the repo
 ```
 git clone https://github.com/RansDesai/node-app.git
@@ -20,7 +21,7 @@ chmod +x k8s/deploy.sh
 kubectl port-forward service/task-service 8080:80
 ```
 
-- Hit the page localhost:/version the expected output will be;
+- Hit the page https://localhost:8080/version the expected output will be;
 ```
 {
   "myapplication": [
@@ -32,3 +33,8 @@ kubectl port-forward service/task-service 8080:80
   ]
 }
 ```
+
+Risks:
+- The repository is public
+- The docker repo is public
+- No automated testing of the application
