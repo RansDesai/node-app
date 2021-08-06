@@ -38,6 +38,12 @@ kubectl port-forward service/task-service 8080:80 -n technical-test
 kubectl rollout restart deployment.apps/task-deployment -n technical-test
 ```
 
+- In order to clean up the resources
+```
+chmod +x k8s/remove.sh
+./k8s/remove.sh
+```
+
 
 ## Versioning Strategy
 The version number of the application is taken from the packages.json. The version field is optional here but if we want to publish the node app to npm registery then it becomes mandatory. So the version field  actually the true representation of application version.
