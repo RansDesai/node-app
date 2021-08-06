@@ -10,13 +10,13 @@ var commitsha
 
 const shell = require('shelljs')
 shell.exec('git clone https://github.com/RansDesai/node-app')
-shell.cd("./node-app/")
+//shell.cd("./node-app/")
 
 app.get('/version', function (req, res) {
   console.log("Got a GET request for /version");
 
-  shell.exec('git pull')
-  fs.readFile('.git/refs/heads/main', 'utf8', function (err,data) {
+  //shell.exec('git pull')
+  fs.readFile('./node-app/.git/refs/heads/main', 'utf8', function (err,data) {
     if (err) {
       return console.log(err);
     }
