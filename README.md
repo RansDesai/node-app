@@ -4,4 +4,31 @@ The application is built in NodeJs. It has just one endpoint /version that retur
 
 ## How to Install
 
+In order to deploy on a kubernetes cluster
+- Clone the repo
+```
+git clone https://github.com/RansDesai/node-app.git
+```
 
+- Run the deploy.sh script under k8s directory
+```
+chmod +x k8s/deploy.sh
+./k8s/deploy.sh
+```
+- You can port forward the service to test the application
+```
+kubectl port-forward service/task-service 8080:80
+```
+
+- Hit the page localhost:/version the expected output will be;
+```
+{
+  "myapplication": [
+    {
+      "version": "1.0.1",
+      "lastcommitsha": "57985022598ca3f6e72f7d9331066cbbc49c5c0d\n",
+      "description": "pre-interview technical test"
+    }
+  ]
+}
+```
