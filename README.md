@@ -3,7 +3,7 @@ The application is built in NodeJS. It has just one endpoint '/version' that ret
 
 ## How to Install
 
-In order to deploy on a Kubernetes cluster
+In order to deploy on a Kubernetes cluster:
 
 - Clone the repo
 ```
